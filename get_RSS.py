@@ -38,12 +38,17 @@ def convert():
   titles_df = pd.DataFrame({'ranking':titles})
   titles_df.to_csv(path_w, header=False, index=False)
 
+# 例外処理
 try:
   with urllib.request.urlopen(req) as response:
     xml_read = response.read()
     convert()
+
+# ステータスコードエラー
 except urllib.error.HTTPError as err:
   print(err.code)
+
+# URLエラー
 except urllib.error.URLError as err:
   print(err.reason)
 
