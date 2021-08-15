@@ -1,0 +1,13 @@
+{
+  "name": "itunes-ranking-bot",
+  "version": "1.0.0",
+  "main": "tweet.js",
+  "license": "MIT",
+  "dependencies": {
+    "cron": "1.8.2",
+    "csv": "^5.5.0",
+    "date-utils": "^1.2.21",
+    "node-cron": "^3.0.0",
+    "twitter-lite": "0.14.0"
+  }
+}

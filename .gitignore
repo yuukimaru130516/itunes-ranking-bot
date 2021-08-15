@@ -1,0 +1,3 @@
+# node_module以下はgitに上げない
+node_modules/
+
