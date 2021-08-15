@@ -8,13 +8,16 @@ import csv
 import pandas as pd
 import datetime
 
+# 取得するランキングの上限
+top_ranking = 5
+
 # 時間の取得
 dt_now = datetime.datetime.now()
 dt_int = int(dt_now.strftime('%Y%m%d%H%M'))
 
 # 読み込むファイル(xml形式)
 xmlns = "{http://www.w3.org/2005/Atom}"
-url = "https://itunes.apple.com/jp/rss/topsongs/limit=5/xml"
+url = f"https://itunes.apple.com/jp/rss/topsongs/limit={top_ranking}/xml"
 req = urllib.request.Request(url)
 
 # ファイルの保存先
@@ -31,7 +34,7 @@ def convert():
     title = entry.find(f'{xmlns}title').text
     titles.append(title)
 
-  for i in range(0, 5):
+  for i in range(0, top_ranking):
     print(f"{i + 1}位：{titles[i]}")
 
   # データフレームに変換して、csvファイルに書き込む
