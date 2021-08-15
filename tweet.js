@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 'use strict'
-
 const Twitter = require('twitter-lite');
 const cron  = require('node-cron');
 const fs = require('fs');
@@ -44,7 +43,6 @@ function postTweet(tweetText) {
     console.log(twitter)
   });
 }
-
 // ツイート文の体裁を整える関数
 function arrangeRanking() {
   for(let v = 1; v <= 5; v++){
